@@ -1,0 +1,33 @@
+@use "reset";
+//Mobile
+#navBar{
+    height: 5vh;
+    background-color: gray;
+}
+
+.header{
+    height: 35vh;
+    background-color: white;
+}
+
+#filter{
+    height: 5vh;
+    background-color: blue;
+}
+
+#videos{
+    height: 55vh;
+    background-color: gray;
+}
+
+//Desktop
+@media (min-width: 600px){
+    #videos{
+        height: 60vh;
+        background-color: gray;
+    }
+
+    #filter{
+        display: none;
+    }
+}
