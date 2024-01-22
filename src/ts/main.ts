@@ -14,18 +14,35 @@ axios.get(url)
         const videoTitle = document.createElement("h3");
         const imgLink = document.createElement("a");
         const img = document.createElement("img");
+        const optionsContainer = document.createElement("div");
+        const audio = document.createElement("audio");
+        const ytBtn = document.createElement("button");
+        const scBtn = document.createElement("button");
 
         videoBox.className = ("videoBox");
         videoTitle.className = ("videoBox--title");
         img.className = ("videoBox--img");
 
+        optionsContainer.className = ("optionsContainer")
+        audio.className = ("optionsContainer--audio");
+        ytBtn.className = ("optionsContainer--youtubeBtn");
+        scBtn.className = ("optionsContainer--soundCloudBtn");
+
         videoTitle.innerHTML = youtubeList[i].snippet.title;
         img.src = youtubeList[i].snippet.thumbnails.default.url;
+
+        ytBtn.innerHTML = "Youtube";
+        scBtn.innerHTML = "SoundCloud";
 
         videosContainer?.appendChild(videoBox);
         videoBox.appendChild(videoTitle);
         videoBox.appendChild(imgLink);
         imgLink.appendChild(img);
+        
+        videoBox.appendChild(optionsContainer);
+        optionsContainer.appendChild(audio);
+        optionsContainer.appendChild(ytBtn);
+        optionsContainer.appendChild(scBtn);
     }
 });
 

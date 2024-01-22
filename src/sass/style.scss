@@ -26,11 +26,12 @@
 }
 
 .videoBox{
-    height: 20rem;
+    height: auto;
     width: 25rem;
     border: 1px solid black;
     border-radius: v.$boxRadius;
     @include mixin.center;
+    flex-direction: column;
 
     &--title{
         position: absolute;
@@ -42,6 +43,25 @@
     }
 }
 
+.optionsContainer{
+    display: flex;
+
+    &--audio{
+        width: 10rem;
+        border-radius: v.$boxRadius;
+    }
+
+    &--youtubeBtn{
+        @include mixin.btn;
+        background-color: rgb(192, 14, 14);
+    }
+
+    &--soundCloudBtn{
+        @include mixin.btn;
+        background-color: rgb(202, 134, 9);
+    }
+
+}
 
 //Desktop
 @media (min-width: 600px){
