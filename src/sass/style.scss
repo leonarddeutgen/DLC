@@ -1,4 +1,7 @@
 @use "reset";
+@use "mixin";
+@use "variables" as v;
+
 //Mobile
 #navBar{
     height: 5vh;
@@ -15,16 +18,39 @@
     background-color: blue;
 }
 
-#videos{
+#videosContainer{
     height: 55vh;
     background-color: gray;
+    @include mixin.center;
+    flex-direction: column;
 }
+
+.videoBox{
+    height: 20rem;
+    width: 25rem;
+    border: 1px solid black;
+    border-radius: v.$boxRadius;
+    @include mixin.center;
+
+    &--title{
+        position: absolute;
+    }
+
+    &--img{
+        width: 20rem;
+        height: auto;
+    }
+}
+
 
 //Desktop
 @media (min-width: 600px){
-    #videos{
+    #videosContainer{
         height: 60vh;
         background-color: gray;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 5rem;
     }
 
     #filter{
