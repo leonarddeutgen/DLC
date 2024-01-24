@@ -19,7 +19,7 @@
 }
 
 #videosContainer{
-    height: 55vh;
+    height: auto;
     background-color: gray;
     @include mixin.center;
     flex-direction: column;
@@ -27,7 +27,7 @@
 
 .videoBox{
     height: auto;
-    width: 25rem;
+    //width: 25rem;
     border: 1px solid black;
     border-radius: v.$boxRadius;
     @include mixin.center;
