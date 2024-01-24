@@ -1,6 +1,7 @@
 @use "reset";
 @use "mixin";
 @use "variables" as v;
+@use "profile";
 
 //Mobile
 #navBar {
@@ -53,6 +54,7 @@
     width: 10rem;
     height: auto;
     border-radius: v.$boxRadius;
+    cursor: pointer;
   }
 
   &--youtubeBtn {

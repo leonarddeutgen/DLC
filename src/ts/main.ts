@@ -1,4 +1,5 @@
 import "../sass/style.scss";
+import { createHTMLProfile, profileList } from "./createHTML/profile";
 import { Ivideo } from "./models/Ivideo";
 import { dlcGetVideos } from "./services/youtubeService";
 
@@ -8,7 +9,7 @@ const dlcVideoss: Ivideo = await dlcGetVideos();
 /* axios.get(url).then((res) => {
   console.log(res.data); */
 
-const dlcVideos = dlcVideoss.items;
+export const dlcVideos = dlcVideoss.items;
 
 console.log(dlcVideos);
 
@@ -21,24 +22,28 @@ for (let i = 0; i < dlcVideos.length; i++) {
   const viewProfile = document.createElement("button");
   const ytBtn = document.createElement("button");
   const scBtn = document.createElement("button");
-//classes
+  //classes
   videoBox.className = "videoBox";
   videoTitle.className = "videoBox--title";
   img.className = "videoBox--img";
   optionsContainer.className = "optionsContainer";
-  viewProfile.className= "optionsContainer--profile"
+  viewProfile.className = "optionsContainer--profile";
   ytBtn.className = "optionsContainer--youtubeBtn";
   scBtn.className = "optionsContainer--soundCloudBtn";
-// innerHTML
+  //innerHTML
   videoTitle.innerHTML = dlcVideos[i].snippet.title;
   img.src = dlcVideos[i].snippet.thumbnails.high.url;
-  viewProfile.innerHTML = "View Profile"
+  viewProfile.innerHTML = "View Profile";
   ytBtn.innerHTML = "Youtube";
   scBtn.innerHTML = "SoundCloud";
-//AddEvent
-
-
-//Append
+  //AddEvent
+  viewProfile.addEventListener("click", () => {
+    window.open("djPage.html", "_self");
+    profileList.push(dlcVideos[i]);
+    console.log(profileList);
+    createHTMLProfile();
+  });
+  //Append
   videosContainer?.appendChild(videoBox);
   videoBox.appendChild(videoTitle);
   videoBox.appendChild(imgLink);
@@ -47,4 +52,5 @@ for (let i = 0; i < dlcVideos.length; i++) {
   optionsContainer.appendChild(viewProfile);
   optionsContainer.appendChild(ytBtn);
   optionsContainer.appendChild(scBtn);
-};
+}
+createHTMLProfile();

@@ -1,0 +1,26 @@
+@use "variables" as v;
+@use "mixin";
+
+#container {
+  height: 100vh;
+
+  &--profile {
+    border: 1px solid black;
+    height: 40vh;
+
+    .profile {
+      height: 10rem;
+      width: 10rem;
+    }
+  }
+
+  &--options {
+    border: 1px solid black;
+    height: 5vh;
+  }
+
+  &--content {
+    border: 1px solid black;
+    height: 50vh;
+  }
+}
