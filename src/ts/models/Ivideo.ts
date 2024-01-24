@@ -1,7 +1,5 @@
+import { ISnippet } from "./ISnippet";
+
 export interface Ivideo{
-    items: {
-        snippet: {
-            title:string;
-        }
-    }
+    items: ISnippet[]
 };

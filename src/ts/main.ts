@@ -1,12 +1,14 @@
 import "../sass/style.scss";
+import { Ivideo } from "./models/Ivideo";
 import { dlcGetVideos } from "./services/youtubeService";
 
-
 const videosContainer = document.getElementById("videosContainer");
-const dlcVideos = await dlcGetVideos();
+const dlcVideoss: Ivideo = await dlcGetVideos();
 //let dlcVideos = res.data.items;
 /* axios.get(url).then((res) => {
   console.log(res.data); */
+
+const dlcVideos = dlcVideoss.items;
 
 console.log(dlcVideos);
 
@@ -29,7 +31,7 @@ for (let i = 0; i < dlcVideos.length; i++) {
   ytBtn.className = "optionsContainer--youtubeBtn";
   scBtn.className = "optionsContainer--soundCloudBtn";
 
-  videoTitle.innerHTML = dlcVideos[i].items.snippet.title;
+  videoTitle.innerHTML = dlcVideos[i].snippet.title;
   //img.src = dlcVideos[i].img;
 
   ytBtn.innerHTML = "Youtube";
@@ -44,4 +46,4 @@ for (let i = 0; i < dlcVideos.length; i++) {
   optionsContainer.appendChild(audio);
   optionsContainer.appendChild(ytBtn);
   optionsContainer.appendChild(scBtn);
-};
+}
