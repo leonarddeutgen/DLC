@@ -1,9 +1,10 @@
 export interface ISnippet {
     snippet: {
         title:string;
+        description:string;
 
         thumbnails:{
-            default:{
+            high:{
                 url:string
             }
         }

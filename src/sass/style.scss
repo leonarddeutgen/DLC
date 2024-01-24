@@ -3,77 +3,99 @@
 @use "variables" as v;
 
 //Mobile
-#navBar{
-    height: 5vh;
-    background-color: gray;
+#navBar {
+  height: 5vh;
+  background-color: v.$backgroundCl;
 }
 
-.header{
-    height: 35vh;
-    background-color: white;
+.header {
+  height: 35vh;
+  background-color: white;
 }
 
-#filter{
-    height: 5vh;
-    background-color: blue;
+#filter {
+  height: 5vh;
+  background-color: blue;
 }
 
-#videosContainer{
+#videosContainer {
+  height: auto;
+  background-color: v.$backgroundCl;
+  @include mixin.center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.videoBox {
+  height: auto;
+  border: 1px solid black;
+  border-radius: v.$boxRadius;
+  @include mixin.center;
+  flex-direction: column;
+
+  &--title {
+    position: absolute;
+    margin: 1rem;
+  }
+
+  &--img {
+    width: 20rem;
     height: auto;
-    background-color: gray;
-    @include mixin.center;
-    flex-direction: column;
+    //padding: 1rem;
+  }
 }
 
-.videoBox{
+.optionsContainer {
+  display: flex;
+  border: 1px solid black;
+
+  &--profile {
+    width: 10rem;
     height: auto;
-    //width: 25rem;
-    border: 1px solid black;
     border-radius: v.$boxRadius;
-    @include mixin.center;
-    flex-direction: column;
+  }
 
-    &--title{
-        position: absolute;
+  &--youtubeBtn {
+    @include mixin.btn;
+    background-color: v.$backgroundCl;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: v.$youtubeColor;
+      color: white;
     }
+  }
 
-    &--img{
-        width: 20rem;
-        height: auto;
+  &--soundCloudBtn {
+    @include mixin.btn;
+    background-color: v.$backgroundCl;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: v.$soundCloudColor;
+      color: white;
     }
-}
-
-.optionsContainer{
-    display: flex;
-
-    &--audio{
-        width: 10rem;
-        border-radius: v.$boxRadius;
-    }
-
-    &--youtubeBtn{
-        @include mixin.btn;
-        background-color: rgb(192, 14, 14);
-    }
-
-    &--soundCloudBtn{
-        @include mixin.btn;
-        background-color: rgb(202, 134, 9);
-    }
-
+  }
 }
 
 //Desktop
-@media (min-width: 600px){
-    #videosContainer{
-        height: 60vh;
-        background-color: gray;
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        padding: 5rem;
-    }
+@media (min-width: 600px) {
+  #videosContainer {
+    height: 60vh;
+    background-color: v.$backgroundCl;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 5rem;
+  }
 
-    #filter{
-        display: none;
-    }
+  #filter {
+    display: none;
+  }
 }

@@ -18,33 +18,33 @@ for (let i = 0; i < dlcVideos.length; i++) {
   const imgLink = document.createElement("a");
   const img = document.createElement("img");
   const optionsContainer = document.createElement("div");
-  const audio = document.createElement("audio");
+  const viewProfile = document.createElement("button");
   const ytBtn = document.createElement("button");
   const scBtn = document.createElement("button");
-
+//classes
   videoBox.className = "videoBox";
   videoTitle.className = "videoBox--title";
   img.className = "videoBox--img";
- 
-
   optionsContainer.className = "optionsContainer";
-  audio.className = "optionsContainer--audio";
+  viewProfile.className= "optionsContainer--profile"
   ytBtn.className = "optionsContainer--youtubeBtn";
   scBtn.className = "optionsContainer--soundCloudBtn";
-
+// innerHTML
   videoTitle.innerHTML = dlcVideos[i].snippet.title;
-  img.src = dlcVideos[i].snippet.thumbnails.default.url;
-
+  img.src = dlcVideos[i].snippet.thumbnails.high.url;
+  viewProfile.innerHTML = "View Profile"
   ytBtn.innerHTML = "Youtube";
   scBtn.innerHTML = "SoundCloud";
+//AddEvent
 
+
+//Append
   videosContainer?.appendChild(videoBox);
   videoBox.appendChild(videoTitle);
   videoBox.appendChild(imgLink);
   imgLink.appendChild(img);
-
   videoBox.appendChild(optionsContainer);
-  optionsContainer.appendChild(audio);
+  optionsContainer.appendChild(viewProfile);
   optionsContainer.appendChild(ytBtn);
   optionsContainer.appendChild(scBtn);
 };
