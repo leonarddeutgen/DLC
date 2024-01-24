@@ -25,6 +25,7 @@ for (let i = 0; i < dlcVideos.length; i++) {
   videoBox.className = "videoBox";
   videoTitle.className = "videoBox--title";
   img.className = "videoBox--img";
+ 
 
   optionsContainer.className = "optionsContainer";
   audio.className = "optionsContainer--audio";
@@ -32,7 +33,7 @@ for (let i = 0; i < dlcVideos.length; i++) {
   scBtn.className = "optionsContainer--soundCloudBtn";
 
   videoTitle.innerHTML = dlcVideos[i].snippet.title;
-  //img.src = dlcVideos[i].img;
+  img.src = dlcVideos[i].snippet.thumbnails.default.url;
 
   ytBtn.innerHTML = "Youtube";
   scBtn.innerHTML = "SoundCloud";
@@ -46,4 +47,4 @@ for (let i = 0; i < dlcVideos.length; i++) {
   optionsContainer.appendChild(audio);
   optionsContainer.appendChild(ytBtn);
   optionsContainer.appendChild(scBtn);
-}
+};
