@@ -17,7 +17,8 @@ for (let i = 0; i < dlcVideos.length; i++) {
   const videoBox = document.createElement("div");
   const videoTitle = document.createElement("h3");
   const imgLink = document.createElement("a");
-  const img = document.createElement("img");
+  //const img = document.createElement("img");
+  const video = document.createElement("iframe");
   const optionsContainer = document.createElement("div");
   const viewProfile = document.createElement("button");
   const ytBtn = document.createElement("button");
@@ -25,14 +26,17 @@ for (let i = 0; i < dlcVideos.length; i++) {
   //classes
   videoBox.className = "videoBox";
   videoTitle.className = "videoBox--title";
-  img.className = "videoBox--img";
+
+  video.className = "videoBox--img";
   optionsContainer.className = "optionsContainer";
   viewProfile.className = "optionsContainer--profile";
   ytBtn.className = "optionsContainer--youtubeBtn";
   scBtn.className = "optionsContainer--soundCloudBtn";
   //innerHTML
   videoTitle.innerHTML = dlcVideos[i].snippet.title;
-  img.src = dlcVideos[i].snippet.thumbnails.high.url;
+  video.src = `https://www.youtube.com/embed/${dlcVideos[i].snippet.resourceId.videoId}?si=${dlcVideos[i].snippet.resourceId.videoId}`;
+  //img.src = dlcVideos[i].snippet.thumbnails.high.url;
+
   viewProfile.innerHTML = "View Profile";
   ytBtn.innerHTML = "Youtube";
   scBtn.innerHTML = "SoundCloud";
@@ -47,7 +51,7 @@ for (let i = 0; i < dlcVideos.length; i++) {
   videosContainer?.appendChild(videoBox);
   videoBox.appendChild(videoTitle);
   videoBox.appendChild(imgLink);
-  imgLink.appendChild(img);
+  imgLink.appendChild(video);
   videoBox.appendChild(optionsContainer);
   optionsContainer.appendChild(viewProfile);
   optionsContainer.appendChild(ytBtn);

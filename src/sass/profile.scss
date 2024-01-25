@@ -3,14 +3,38 @@
 
 #container {
   height: 100vh;
-
+  
   &--profile {
     border: 1px solid black;
     height: 40vh;
+    display: grid;
+    grid-template-areas:
+      "img tit tit "
+      "img tit tit"
+      "tex tex tex"
+      "tex tex tex";
 
     .profile {
       height: 10rem;
-      width: 10rem;
+      width: auto;
+      grid-area: img;
+
+      &--titleBox {
+        grid-area: tit;
+        border: 1px solid black;
+        height: 10rem;
+        width: 10rem;
+  
+      }
+
+      &--textBox {
+        width: 15rem;
+        height: 8rem;
+        border: 1px solid black;
+        overflow: scroll;
+        border-radius: v.$boxRadius;
+        grid-area: tex;
+      }
     }
   }
 
