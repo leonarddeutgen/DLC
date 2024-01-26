@@ -3,48 +3,61 @@
 
 #container {
   height: 100vh;
-  
+  display: flex;
+  flex-direction: column;
+
   &--profile {
     border: 1px solid black;
     height: 40vh;
-    display: grid;
-    grid-template-areas:
-      "img tit tit "
-      "img tit tit"
-      "tex tex tex"
-      "tex tex tex";
+  }
 
-    .profile {
-      height: 10rem;
-      width: auto;
-      grid-area: img;
+  .profile1 {
+    //width: 30rem;
+    border: 1px solid green;
+    display: flex;
 
-      &--titleBox {
-        grid-area: tit;
-        border: 1px solid black;
-        height: 10rem;
-        width: 10rem;
-  
-      }
+    &--img {
+      width: 11rem;
+    }
 
-      &--textBox {
-        width: 15rem;
-        height: 8rem;
-        border: 1px solid black;
-        overflow: scroll;
-        border-radius: v.$boxRadius;
-        grid-area: tex;
-      }
+    &--titleBox {
+      height: 5rem;
+      width: 100%;
+      border: 1px solid red;
+      @include mixin.center;
+    }
+  }
+
+  .profile2 {
+    @include mixin.center;
+    padding: 1rem;
+
+    &--textBox {
+      height: 8rem;
+      width: 20rem;
+      border: 1px solid black;
+      border-radius: v.$boxRadius;
+      overflow: scroll;
+      padding: 1rem;
+      margin: 1rem;
     }
   }
 
   &--options {
     border: 1px solid black;
     height: 5vh;
+    //background-color: v.$backgroundCl;
   }
 
   &--content {
     border: 1px solid black;
     height: 50vh;
   }
+
+  .content1{
+    @include mixin.center;
+    height: 15rem;
+    border: 1px solid red;
+  }
+
 }
