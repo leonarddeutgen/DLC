@@ -4,12 +4,12 @@ import { Ivideo } from "./models/Ivideo";
 import { dlcGetVideos } from "./services/youtubeService";
 
 const videosContainer = document.getElementById("videosContainer");
-const dlcVideoss: Ivideo = await dlcGetVideos();
+const dlcVideoObject: Ivideo = await dlcGetVideos();
 //let dlcVideos = res.data.items;
 /* axios.get(url).then((res) => {
   console.log(res.data); */
 
-export const dlcVideos = dlcVideoss.items;
+export const dlcVideos = dlcVideoObject.items;
 
 console.log(dlcVideos);
 
@@ -26,7 +26,6 @@ for (let i = 0; i < dlcVideos.length; i++) {
   //classes
   videoBox.className = "videoBox";
   videoTitle.className = "videoBox--title";
-
   video.className = "videoBox--img";
   optionsContainer.className = "optionsContainer";
   viewProfile.className = "optionsContainer--profile";
@@ -36,7 +35,6 @@ for (let i = 0; i < dlcVideos.length; i++) {
   videoTitle.innerHTML = dlcVideos[i].snippet.title;
   video.src = `https://www.youtube.com/embed/${dlcVideos[i].snippet.resourceId.videoId}?si=${dlcVideos[i].snippet.resourceId.videoId}`;
   //img.src = dlcVideos[i].snippet.thumbnails.high.url;
-
   viewProfile.innerHTML = "View Profile";
   ytBtn.innerHTML = "Youtube";
   scBtn.innerHTML = "SoundCloud";

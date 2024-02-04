@@ -5,7 +5,6 @@ const navBar = document.getElementById("navBar");
 const profileContainer = document.getElementById("container--profile");
 const contentContainer = document.getElementById("container--content");
 
-
 export let profileList: ISnippet[] = [];
 const LSValue = localStorage.getItem("profileList");
 
@@ -19,7 +18,7 @@ export const createHTMLProfile = () => {
   //Tömmer sidan
   if (profileContainer) {
     profileContainer.innerHTML = "";
-  };
+  }
 
   for (let i = 0; i < profileList.length; i++) {
     //Create
@@ -54,10 +53,9 @@ export const createHTMLProfile = () => {
     profileContainer?.appendChild(miniContainer);
     miniContainer?.appendChild(profileTextBox);
     profileTextBox.appendChild(profileText);
-
     contentContainer?.appendChild(contentVideoBox);
     contentVideoBox.appendChild(contentVideo);
-  };
+  }
 };
 
 navBar?.addEventListener("click", () => {

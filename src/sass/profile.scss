@@ -54,10 +54,49 @@
     height: 50vh;
   }
 
-  .content1{
+  .content1 {
     @include mixin.center;
     height: 15rem;
     border: 1px solid red;
   }
+}
 
+//Desktop
+@media (min-width: 600px) {
+  //first page
+  .profile1 {
+    //width: 30rem;
+    border: 1px solid green;
+    display: flex;
+
+    &--img {
+      width: 11rem;
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    &--titleBox {
+      height: 5rem;
+      //width: 100%;
+      border: 1px solid black;
+      @include mixin.center;
+    }
+  }
+
+  .profile2 {
+    @include mixin.center;
+    padding: 1rem;
+
+    &--textBox {
+      height: 8rem;
+      width: 40rem;
+      border: 1px solid black;
+      border-radius: v.$boxRadius;
+      overflow: scroll;
+      padding: 1rem;
+      margin: 1rem;
+    }
+  }
 }
