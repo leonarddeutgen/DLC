@@ -40,10 +40,11 @@ export const createHTMLProfile = () => {
     profileTextBox.className = "profile2--textBox";
     profileText.className = "profile2--text";
     contentVideoBox.className = "content1";
+    contentVideo.className = "content1--video"
     //innerHTML
-    profileImg.src = dlcVideos[i].snippet.thumbnails.high.url;
-    profileTitle.innerHTML = dlcVideos[i].snippet.title;
-    profileText.innerHTML = dlcVideos[i].snippet.description;
+    profileImg.src = profileList[i].snippet.thumbnails.high.url;
+    profileTitle.innerHTML = profileList[i].snippet.title;
+    profileText.innerHTML = profileList[i].snippet.description;
     contentVideo.src = `https://www.youtube.com/embed/${profileList[i].snippet.resourceId.videoId}?si=${profileList[i].snippet.resourceId.videoId}`;
     //Append
     profileContainer?.appendChild(miniContainer1);

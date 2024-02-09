@@ -64,39 +64,60 @@
 //Desktop
 @media (min-width: 600px) {
   //first page
-  .profile1 {
-    //width: 30rem;
-    border: 1px solid green;
+
+  #container {
+    //height: 100vh;
     display: flex;
+    flex-direction: column;
 
-    &--img {
-      width: 11rem;
+    &--options {
+      height: 5vh;
+    }
+    .profile1 {
+      //width: 30rem;
+      height: 20vh;
+      border: 1px solid blue;
+      display: flex;
+
+      &--img {
+        width: 20rem;
+      }
+
+      &--title {
+        font-size: 25px;
+      }
+
+      &--titleBox {
+        height: 5rem;
+        //width: 100%;
+        border: 1px solid red;
+        @include mixin.center;
+      }
     }
 
-    &--title {
-      font-size: 20px;
-    }
-
-    &--titleBox {
-      height: 5rem;
-      //width: 100%;
-      border: 1px solid black;
+    .profile2 {
       @include mixin.center;
-    }
-  }
-
-  .profile2 {
-    @include mixin.center;
-    padding: 1rem;
-
-    &--textBox {
-      height: 8rem;
-      width: 40rem;
-      border: 1px solid black;
-      border-radius: v.$boxRadius;
-      overflow: scroll;
       padding: 1rem;
-      margin: 1rem;
+      //height: 40vh;
+
+      &--textBox {
+        height: 8rem;
+        width: 40rem;
+        border: 1px solid pink;
+        border-radius: v.$boxRadius;
+        overflow: scroll;
+        padding: 1rem;
+        margin: 1rem;
+      }
+    }
+
+    .content1 {
+      height: 40vh;
+      &--video {
+        //margin: 1rem;
+        height: 20rem;
+        width: 40rem;
+      }
     }
   }
 }
