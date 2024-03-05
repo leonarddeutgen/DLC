@@ -29,10 +29,11 @@
 
 .videoBox {
   height: auto;
-  border: 1px solid black;
+  //border: 1px solid black;
   border-radius: v.$boxRadius;
   @include mixin.center;
   flex-direction: column;
+  transition: 0.3s;
 
   &--title {
     position: absolute;
@@ -40,9 +41,15 @@
   }
 
   &--img {
-    width: 20rem;
-    height: auto;
+    width: 25rem;
+    height: 15rem;
     //padding: 1rem;
+  }
+  &:hover {
+    transform: scale(1.2);
+    .optionsContainer--profile {
+      display: block;
+    }
   }
 }
 
@@ -51,10 +58,17 @@
   border: 1px solid black;
 
   &--profile {
+    padding: 0.5rem;
     width: 10rem;
     height: auto;
     border-radius: v.$boxRadius;
     cursor: pointer;
+    border: none;
+    display: none;
+
+    &:hover {
+      background-color: pink;
+    }
   }
 
   &--youtubeBtn {
@@ -90,7 +104,7 @@
 @media (min-width: 600px) {
   //first page
   #videosContainer {
-    height: 60vh;
+    height: auto;
     background-color: v.$backgroundCl;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

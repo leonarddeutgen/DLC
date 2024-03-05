@@ -1,4 +1,4 @@
-import { dlcVideos } from "../main";
+//import { dlcVideos } from "../main";
 import { ISnippet } from "../models/ISnippet";
 
 const navBar = document.getElementById("navBar");
@@ -40,7 +40,7 @@ export const createHTMLProfile = () => {
     profileTextBox.className = "profile2--textBox";
     profileText.className = "profile2--text";
     contentVideoBox.className = "content1";
-    contentVideo.className = "content1--video"
+    contentVideo.className = "content1--video";
     //innerHTML
     profileImg.src = profileList[i].snippet.thumbnails.high.url;
     profileTitle.innerHTML = profileList[i].snippet.title;

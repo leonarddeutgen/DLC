@@ -13,7 +13,7 @@
 
   .profile1 {
     //width: 30rem;
-    border: 1px solid green;
+    //border: 1px solid green;
     display: flex;
 
     &--img {
@@ -57,7 +57,7 @@
   .content1 {
     @include mixin.center;
     height: 15rem;
-    border: 1px solid red;
+    //border: 1px solid red;
   }
 }
 
@@ -76,7 +76,7 @@
     .profile1 {
       //width: 30rem;
       height: 20vh;
-      border: 1px solid blue;
+      //border: 1px solid blue;
       display: flex;
 
       &--img {
@@ -102,7 +102,7 @@
 
       &--textBox {
         height: 8rem;
-        width: 40rem;
+        width: 50rem;
         border: 1px solid pink;
         border-radius: v.$boxRadius;
         overflow: scroll;
