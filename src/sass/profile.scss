@@ -5,6 +5,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: v.$backgroundCl;
 
   &--profile {
     border: 1px solid black;
@@ -17,14 +18,15 @@
     display: flex;
 
     &--img {
-      width: 11rem;
+      width: 40%;
     }
 
     &--titleBox {
-      height: 5rem;
-      width: 100%;
-      border: 1px solid red;
-      @include mixin.center;
+      height: 100%;
+      width: 60%;
+      //border: 1px solid red;
+      @include mixin.centerColumn;
+      gap: 1rem;
     }
   }
 
@@ -34,7 +36,7 @@
 
     &--textBox {
       height: 8rem;
-      width: 20rem;
+      width: 80%;
       border: 1px solid black;
       border-radius: v.$boxRadius;
       overflow: scroll;
@@ -56,8 +58,12 @@
 
   .content1 {
     @include mixin.center;
-    height: 15rem;
+    //height: 20rem;
     //border: 1px solid red;
+
+    &--video {
+      width: 80%;
+    }
   }
 }
 
@@ -88,16 +94,18 @@
       }
 
       &--titleBox {
-        height: 5rem;
+        height: 100%;
         //width: 100%;
-        border: 1px solid red;
-        @include mixin.center;
+        //border: 1px solid red;
+        @include mixin.centerColumn;
+        gap: 1rem;
       }
     }
 
     .profile2 {
-      @include mixin.center;
+      @include mixin.centerColumn;
       padding: 1rem;
+      //border: 1px solid blue;
       //height: 40vh;
 
       &--textBox {
@@ -113,6 +121,8 @@
 
     .content1 {
       height: 40vh;
+      @include mixin.centerColumn;
+      //border: 1px solid blue;
       &--video {
         //margin: 1rem;
         height: 20rem;
